@@ -1,0 +1,9 @@
+<h1>all movies</h1>
+
+<ul>
+    {{#each casts}}
+        <li><a href="/movies/movies-details/{{_id}}">{{title}}</a></li>
+        <li>{{genre}}</li>
+        <br>
+    {{/each}}
+</ul>
