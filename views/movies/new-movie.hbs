@@ -11,7 +11,7 @@
 
     <label for="cast">Choose celebrities</label>
     
-    <select name="cast" id="cast">
+    <select name="cast" id="cast" multiple>
         <option value=""></option>
         {{#each dbCelebrities}}
             <option value="{{_id}}">{{name}}</option>

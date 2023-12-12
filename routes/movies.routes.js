@@ -53,13 +53,29 @@ router.post('/:movieId/delete', (req, res) => {
 
 router.get('/:movieId/edit', (req,res) => {
     const { movieId } = req.params;
-    //console.log(req.params)
+
+    let foundMovie;
     
     Movie.findById(movieId)
-        .populate('cast')
-        .then((foundMovie) => {
-            console.log(foundMovie)
-            res.render('movies/edit-movie', {movie: foundMovie});
+        .then((foundMovieFromDB) => {
+            foundMovie = foundMovieFromDB;
+            console.log('MOVIE',foundMovieFromDB)
+            return Celebrity.find();
+        })
+        .then((foundCelebrities)  => {
+            console.log('celebrities',foundCelebrities)
+            res.render('movies/edit-movie', {movie: foundMovie, celebrities: foundCelebrities });
+        } )
+        .catch((err) => console.log(err))
+})
+
+router.post('/edit/:movieId', (req, res) => {
+    const { movieId } = req.params;
+
+    Movie.findByIdAndUpdate(movieId, req.body, {new: true})
+        .then(updatedMovie => {
+            console.log('found movie after EDITTING is DONE', updatedMovie)
+            res.redirect('/movies/movies')
         })
         .catch((err) => console.log(err))
 })
