@@ -4,7 +4,7 @@ const router = require("express").Router();
 const Movie = require('../models/Movies.model');
 const Celebrity = require('../models/Celebrity.model');
 
-router.get('/create', (req, res) => {
+router.get('/movies/create', (req, res) => {
     Celebrity.find()
         .then((dbCelebrities) => {
             console.log('All movies:',dbCelebrities)
@@ -13,7 +13,7 @@ router.get('/create', (req, res) => {
         .catch((err) => console.log(err))
 })
 
-router.get('/movies', (req, res) => {
+router.get('/movies/movies', (req, res) => {
     Movie.find()
         .populate('cast')
         .then((foundMovies) => {
@@ -22,7 +22,7 @@ router.get('/movies', (req, res) => {
         })
 })
 
-router.post('/create', (req, res) => {
+router.post('/movies/create', (req, res) => {
     Movie.create(req.body)
         .then(() => {
             res.redirect('movies')
@@ -31,7 +31,7 @@ router.post('/create', (req, res) => {
 }) 
 
 
-router.get('/movies-details/:movieId', (req, res) => {
+router.get('/movies/movies-details/:movieId', (req, res) => {
     const {movieId} = req.params
 
     Movie.findById(movieId)
@@ -41,7 +41,7 @@ router.get('/movies-details/:movieId', (req, res) => {
         })
 })
 
-router.post('/:movieId/delete', (req, res) => {
+router.post('/movies/:movieId/delete', (req, res) => {
     const { movieId } = req.params
 
     Movie.findByIdAndDelete(movieId)
@@ -51,7 +51,7 @@ router.post('/:movieId/delete', (req, res) => {
         .catch((err) => console.log(err))
 })
 
-router.get('/:movieId/edit', (req,res) => {
+router.get('/movies/:movieId/edit', (req,res) => {
     const { movieId } = req.params;
 
     let foundMovie;
@@ -69,7 +69,7 @@ router.get('/:movieId/edit', (req,res) => {
         .catch((err) => console.log(err))
 })
 
-router.post('/edit/:movieId', (req, res) => {
+router.post('/movies/edit/:movieId', (req, res) => {
     const { movieId } = req.params;
 
     Movie.findByIdAndUpdate(movieId, req.body, {new: true})
