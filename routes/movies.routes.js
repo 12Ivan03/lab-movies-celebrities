@@ -13,7 +13,7 @@ router.get('/movies/create', (req, res) => {
         .catch((err) => console.log(err))
 })
 
-router.get('/movies/movies', (req, res) => {
+router.get('/movies/view-all-movies', (req, res) => {
     Movie.find()
         .populate('cast')
         .then((foundMovies) => {
@@ -25,7 +25,7 @@ router.get('/movies/movies', (req, res) => {
 router.post('/movies/create', (req, res) => {
     Movie.create(req.body)
         .then(() => {
-            res.redirect('movies')
+            res.redirect('/movies/view-all-movies')
         })
         .catch((err) => console.log(err))
 }) 
@@ -46,7 +46,7 @@ router.post('/movies/:movieId/delete', (req, res) => {
 
     Movie.findByIdAndDelete(movieId)
         .then(() => {
-            res.redirect('/movies/movies')
+            res.redirect('/movies/view-all-movies')
         })
         .catch((err) => console.log(err))
 })
@@ -75,7 +75,7 @@ router.post('/movies/edit/:movieId', (req, res) => {
     Movie.findByIdAndUpdate(movieId, req.body, {new: true})
         .then(updatedMovie => {
             console.log('found movie after EDITTING is DONE', updatedMovie)
-            res.redirect('/movies/movies')
+            res.redirect('/movies/view-all-movies')
         })
         .catch((err) => console.log(err))
 })
