@@ -1,8 +1,55 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.home-page {
+  height: 100vh;
+  background-image: url(../images/hollywood1.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-a {
-  color: #00b7ff;
+.nav-bar {
+  display: flex;
+  margin: 1rem 3rem;
 }
+
+/* btns */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  height: 10rem;
+  width: 10rem;
+  border: none;
+  background: transparent;
+  margin-right: 1rem;
+}
+
+.btn img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  height: 10rem;
+  width: 10rem;
+}
+
+.btn a {
+  position: relative;
+  z-index: 2;
+  font-weight: 900;
+  font-size: large;
+  color: rgb(255, 183, 0);
+  text-shadow: 0.1rem 0.1rem 0.1rem black ;
+}
+
+/* Nav-bar- apart from the bg page. */
+
+.create-celebrities .nav-bar {
+  background-image: url(../images/hollywood1.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 3rem 5rem;
+  padding: 0;
+}
+
