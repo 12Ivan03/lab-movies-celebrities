@@ -1,23 +1,27 @@
-<h1>crete new movies</h1>
+<h1  class="text-of-all">Crete Movies</h1>
 
-<form action="/movies/create" method="post">
+<form action="/movies/create" method="post" class="form-details">
 
-    <label for="title">Movie title</label>
-    <input type="text" id="title" name="title">
-    <label for="genre">Genre</label>
-    <input type="text" id="genre" name="genre">
-    <label for="plot">Plot</label>
-    <input type="text" id="plot" name="plot">
+    <label for="title">Movie title:
+        <input type="text" id="title" name="title" class="input-box">
+    </label>
 
-    <label for="cast">Choose celebrities</label>
+    <label for="genre">Genre:
+        <input type="text" id="genre" name="genre" class="input-box">
+    </label>
+
+    <label for="plot">Plot:
+        <textarea name="plot" id="plot" cols="30" rows="4" class="input-box"></textarea>
+    </label>
+
+    <label for="cast">Choose celebrities:</label>
     
-    <select name="cast" id="cast" multiple>
+    <select name="cast" id="cast" class="input-box" multiple>
         <option value=""></option>
         {{#each dbCelebrities}}
             <option value="{{_id}}">{{name}}</option>
         {{/each}}
     </select>
 
-    <br>
-    <button type="submit">sunbmit</button>
+    <button type="submit" class="celebrities-btn">Sunbmit</button>
 </form>

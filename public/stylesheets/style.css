@@ -8,6 +8,7 @@
 
 .nav-bar {
   display: flex;
+  justify-content: space-evenly;
   margin: 1rem 3rem;
 }
 
@@ -42,7 +43,22 @@
   text-shadow: 0.1rem 0.1rem 0.1rem black ;
 }
 
+/* container */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Nav-bar- apart from the bg page. */
+
+.bg-page{
+  background-image: url(../images/hollywood1.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .create-celebrities .nav-bar {
   background-image: url(../images/hollywood1.jpeg);
@@ -53,3 +69,171 @@
   padding: 0;
 }
 
+/* celebrities- movies list of all  */
+
+.text-of-all{
+  text-align: center;
+  color: gold;
+  text-shadow: 0.1rem 0.1rem 0.1rem black ;
+  font-size: xx-large;
+  margin: 1rem 0;
+}
+
+.list-of-all {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.list-of-all li {
+  list-style: none;
+}
+
+.title-movie {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.ul-container {
+  border: 0.1rem solid goldenrod;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem goldenrod;
+}
+
+.ul-container:hover {
+  border: 0.1rem solid gold;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgb(240, 94, 240);
+}
+
+.ul-container {
+  background-color: peru;
+}
+
+.ul-container li {
+  margin: 0.5rem;
+}
+
+/* only movies list of all */
+.title-movie-a{
+  color: black;
+  font-size: large;
+}
+
+.title-movie-a:hover{
+  color: rgb(245, 183, 183);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.genre {
+  display: block;
+}
+
+/* only celebrities list of all */
+
+.info-celebrities{
+  color:  hsl(51, 100%, 50%, 0.7);
+}
+
+/* create celebrities and movie */
+
+.form-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(218, 165, 32, 0.5);
+  border-radius: 3rem;
+  margin-right: 30vw;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+}
+
+.form-details label {
+  margin: 1rem;
+  font-weight: bolder;
+}
+
+.form-details button {
+  margin: 1rem;
+  border: 0.1rem solid rgb(218, 165, 32, 0.5);
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem goldenrod;
+  background-color: rgb(196, 152, 38);
+  height: 2rem;
+  width: 15rem;
+  font-weight: 900;
+}
+
+.form-details button:hover {
+  border: 0.1rem solid gold;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgb(240, 94, 240);
+}
+
+.input-box {
+  box-shadow: 0 0 1rem rgb(240, 94, 240);
+  border: none;
+}
+
+/* movie Edit */
+
+.detail-movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(218, 165, 32, 0.5);
+  border-radius: 3rem;
+  margin-right: 30vw;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+}
+
+.list-edit-movie li {
+  list-style: none;
+
+}
+
+.list-edit-movie li p, .ul-part-of-li {
+  text-indent: -1rem;
+  font-weight: 900;
+  margin: 0.3rem 0 0.5rem 0;
+}
+
+.ul-part-of-li {
+  text-indent: 0.3rem;
+}
+
+.btns-edit {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-edit-movie{
+  margin: 1rem;
+  border: 0.1rem solid rgb(218, 165, 32, 0.5);
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem goldenrod;
+  background-color: rgb(196, 152, 38);
+  height: 2rem;
+  width: 15rem;
+  font-weight: 900;
+}
+
+.btn-edit-movie:hover {
+  border: 0.1rem solid gold;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgb(240, 94, 240);
+}
+
+.btn-edit-movie a {
+  color:black
+}
+
+/* delete btn */
+
+.delete-btn {
+  width: 12rem !important;
+}

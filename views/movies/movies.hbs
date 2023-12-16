@@ -1,9 +1,11 @@
-<h1>all movies</h1>
+<h1 class="text-of-all">Movies</h1>
 
-<ul>
+<div class="list-of-all">
     {{#each casts}}
-        <li><a href="/movies/movies-details/{{_id}}">{{title}}</a></li>
-        <li>{{genre}}</li>
-        <br>
+        <ul class="ul-container ul-container-hover">
+            <li class="title-movie"><a href="/movies/movies-details/{{_id}}" class="title-movie-a">{{title}}</a></li>
+            <li class="genre">Genre: {{genre}}</li>
+            <br>
+        </ul>
     {{/each}}
-</ul>
+</div>

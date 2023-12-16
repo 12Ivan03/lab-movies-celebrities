@@ -8,7 +8,7 @@ router.get('/movies/create', (req, res) => {
     Celebrity.find()
         .then((dbCelebrities) => {
             console.log('All movies:',dbCelebrities)
-            res.render('movies/new-movie', { dbCelebrities,  bgPage: 'create-celebrities'})
+            res.render('movies/new-movie', { dbCelebrities,  bgPage: 'create-celebrities bg-page'})
         })
         .catch((err) => console.log(err))
 })
@@ -18,7 +18,7 @@ router.get('/movies/view-all-movies', (req, res) => {
         .populate('cast')
         .then((foundMovies) => {
             console.log(foundMovies)
-            res.render('movies/movies', { casts: foundMovies, bgPage: 'create-celebrities' })
+            res.render('movies/movies', { casts: foundMovies, bgPage: 'create-celebrities bg-page', container: 'list-celebrities' })
         })
 })
 
@@ -37,7 +37,7 @@ router.get('/movies/movies-details/:movieId', (req, res) => {
     Movie.findById(movieId)
         .populate('cast')
         .then((foundMovie) => {
-            res.render('movies/movies-details', { movie: foundMovie, bgPage: 'create-celebrities'})
+            res.render('movies/movies-details', { movie: foundMovie, bgPage: 'create-celebrities bg-page'})
         })
 })
 
@@ -64,7 +64,7 @@ router.get('/movies/:movieId/edit', (req,res) => {
         })
         .then((foundCelebrities)  => {
             console.log('celebrities',foundCelebrities)
-            res.render('movies/edit-movie', {movie: foundMovie, celebrities: foundCelebrities, bgPage: 'create-celebrities' });
+            res.render('movies/edit-movie', {movie: foundMovie, celebrities: foundCelebrities, bgPage: 'create-celebrities bg-page' });
         } )
         .catch((err) => console.log(err))
 })

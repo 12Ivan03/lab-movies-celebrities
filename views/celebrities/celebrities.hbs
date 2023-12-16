@@ -1,10 +1,16 @@
-<h1>all celebrities</h1>
+<h1 class="text-of-all">Celebrities</h1>
 
-<ul>
+<div class="list-of-all">
     {{#each foundCelebrities}}
-        <li>{{name}}</li>
-        <li>{{occupation}}</li>
-        <li>{{catchPhrase}}</li>
-        <br>
+    <ul class="ul-container">
+        <li><p class="info-celebrities">Name:</p>{{name}}</li>
+        <li><p class="info-celebrities">Occupation:</p>{{occupation}}</li>
+        <li><p class="info-celebrities">Phrase:</p>{{catchPhrase}}</li>
+        <li>
+            <form action="/celebrities/{{id}}/delete" method="POST">
+                <button type="submit" class="btn-edit-movie delete-btn">Delete Celebrity</button>
+            </form>
+        </li>
+    </ul>
     {{/each}}
-</ul>
+</div>

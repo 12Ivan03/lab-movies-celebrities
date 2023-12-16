@@ -1,16 +1,23 @@
-<h1>movie Details</h1>
+<h1  class="text-of-all">Movie Details</h1>
 
-<ul>
-    <li>{{movie.title}}</li>
-    <li>{{movie.genre}}</li>
-    <li>{{movie.plot}}</li>
-    {{#each movie.cast}}
-        <li>{{this.name}}</li> 
-    {{/each}}
-</ul>
+<div class="detail-movie">
+    <ul class="list-edit-movie">
+        <li><p>Movie Title:</p>{{movie.title}}</li>
+        <li><p>Genre:</p>{{movie.genre}}</li>
+        <li><p>Plot:</p>{{movie.plot}}</li>
+        <li>
+            <ul class="ul-part-of-li"><p>Cast:</p>
+                {{#each movie.cast}}
+                    <li>{{this.name}}</li> 
+                {{/each}}
+            </ul>
+        </li>
+    </ul>
+    <div class="btns-edit">
+        <button class="btn-edit-movie"><a href="/movies/{{movie._id}}/edit">Edit</a></button>
 
-<button><a href="/movies/{{movie._id}}/edit">Edit</a></button>
-
-<form action="/movies/{{movie._id}}/delete" method="post">
-    <button type="submit">Delete</button>
-</form>
+        <form action="/movies/{{movie._id}}/delete" method="post">
+            <button class="btn-edit-movie" type="submit">Delete</button>
+        </form>
+    </div>
+</div>
